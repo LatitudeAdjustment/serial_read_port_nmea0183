@@ -51,17 +51,6 @@ python serial_read_port_nmea0183.py /dev/tty.usbserial-XXXX
 python serial_read_port_nmea0183.py /dev/tty.usbserial-1110
 ```
 
-## Stop Program
-
-Entry Ctrl-z to stop the program:
-
-```bash
-$GPRMC,161008.000,A,4104.4935,N,07326.7605,W,0.17,281.20,270326,,,A*71
-$GPGGA,161009.000,4104.4934,N,07326.7607,W,1,08,2.4,19.7,M,-34.3,M,,0000*54
-^Z
-[1]+  Stopped                 python serial_read_port_nmea0183.py /dev/tty.usbserial-1110
-```
-
 ### Import Issue
 
 ```bash
@@ -72,7 +61,8 @@ $ python serial_read_port_nmea0183.py /dev/tty.usbserial-1110
 SyntaxError: invalid syntax
 ```
 
-Set up virtual environment (done previously):
+A virtual environment is required.
+Set up the virtual environment as follows (done previously):
 
 ```bash
 $ python3 -m venv ~/serial-venv
@@ -139,5 +129,16 @@ Stopped.
 ### Pipe to File
 
 ```bash
-python serial_read_port_nmea0183.py /dev/tty.usbserial-1110 > BU-353S4_Output_003.log
+python serial_read_port_nmea0183.py /dev/tty.usbserial-1110 > BU-353S4_Output_001.log
+```
+
+## Stop Program
+
+Entry Ctrl-z to stop the program:
+
+```bash
+$GPRMC,161008.000,A,4104.4935,N,07326.7605,W,0.17,281.20,270326,,,A*71
+$GPGGA,161009.000,4104.4934,N,07326.7607,W,1,08,2.4,19.7,M,-34.3,M,,0000*54
+^Z
+[1]+  Stopped                 python serial_read_port_nmea0183.py /dev/tty.usbserial-1110
 ```
