@@ -76,6 +76,10 @@ Requirement already satisfied: pyserial in /Users/username/serial-venv/lib/pytho
 
 ### Subsequent Execution
 
+Data appears as lines of NMEA 0183 "sentences" ending with a linefeed.
+The first line from the program begins with "Listening" and the first data line
+may be truncated as in the following excerpt.
+
 ```bash
 $ python serial_read_port_nmea0183.py /dev/tty.usbserial-1110
 Listening on /dev/tty.usbserial-1110 at 4800 baud... (Ctrl+C to quit)
